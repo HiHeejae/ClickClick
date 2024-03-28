@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
-    public static NoteManager instance;
+    public static NoteManager Instance;
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     public void OnInput(KeyCode keyCode)

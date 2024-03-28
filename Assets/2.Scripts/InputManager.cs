@@ -15,17 +15,17 @@ public class InputManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.A))
         {
-            NoteManager.instance.OnInput(KeyCode.A);
+            NoteManager.Instance.OnInput(KeyCode.A);
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            NoteManager.instance.OnInput(KeyCode.S);
+            NoteManager.Instance.OnInput(KeyCode.S);
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            NoteManager.instance.OnInput(KeyCode.D);
+            NoteManager.Instance.OnInput(KeyCode.D);
         }
     }
 }

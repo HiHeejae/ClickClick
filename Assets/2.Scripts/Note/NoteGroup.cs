@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -9,6 +11,11 @@ public class NoteGroup : MonoBehaviour
     [SerializeField] private GameObject notePrefab;
     [SerializeField] private GameObject notespawn;
     [SerializeField] private float noteGap = 6f;
+
+    [SerializeField] private SpriteRenderer btnSpriteRender;
+    [SerializeField] private Sprite normalBtnSprite;
+    [SerializeField] private Sprite SelectBtnSprite;
+    [SerializeField] private Animation anim;
 
     private List<Note> noteList = new List<Note>();
 
@@ -23,6 +30,22 @@ public class NoteGroup : MonoBehaviour
 
             noteList.Add(note);
         }
-    } //-16.5 16
 
+    
+    }
+
+    public void OnInput(bool isSelect)
+    {
+        if (isSelect)
+        {
+                anim.Play();
+                btnSpriteRender.sprite = SelectBtnSprite;
+        }
+    }
+
+    public void callAniDone()
+    {
+        btnSpriteRender.sprite = normalBtnSprite;
+    }
+    
 }

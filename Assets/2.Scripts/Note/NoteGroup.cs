@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,8 +17,9 @@ public class notegroup : MonoBehaviour
     [SerializeField] private SpriteRenderer btnSpriteRender;
     [SerializeField] private Sprite normalBtnSprite;
     [SerializeField] private Sprite SelectBtnSprite;
+    [SerializeField] private TextMeshPro keyCodeTmp;
     [SerializeField] private Animation anim;
-    public KeyCode Keycode;
+    private KeyCode Keycode;
     public KeyCode KeyCode
     {
         get
@@ -29,12 +31,16 @@ public class notegroup : MonoBehaviour
 
     private List<Note> noteList = new List<Note>();
 
-    void start()
+    public void Create(KeyCode keyCode)
     {
+        this.Keycode = keyCode;
+        keyCodeTmp.text = Keycode.ToString();
         for (int i = 0; i < noteMaxNum; i++)
         {
             CreateNote(true);
         }
+
+        InputManager.Instance.addkeycode(keyCode);
 
 
     }

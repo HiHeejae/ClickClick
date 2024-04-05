@@ -340,6 +340,10 @@ MonoBehaviour:
   notePrefab: {fileID: 4103263866192423084, guid: 426c3388e17166b43b51f0848bd5d6c3, type: 3}
   notespawn: {fileID: 630351394841090521}
   noteGap: 7.5
+  btnSpriteRender: {fileID: 3588644217074208686}
+  normalBtnSprite: {fileID: 21300000, guid: d7b61edc0b017174095824530172ad1f, type: 3}
+  SelectBtnSprite: {fileID: 21300000, guid: 4fce3950ae84d9c46a154454c898bf17, type: 3}
+  keyCodeTmp: {fileID: 3095566928191500807}
   anim: {fileID: 2441846032374432425}
 --- !u!111 &2441846032374432425
 Animation:
@@ -350,7 +354,7 @@ Animation:
   m_GameObject: {fileID: 5588407063569355074}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: c620e9a88ee49084bad10b02b23d47a6, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: c620e9a88ee49084bad10b02b23d47a6, type: 2}
   m_WrapMode: 0

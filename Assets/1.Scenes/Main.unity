@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d1546fbf5a11447b620b55f2234c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initKeyCodeArr: 610000007300000064000000
+  initKeyCodeArr: 660000006700000068000000
   noteGrouprefab: {fileID: 5588407063569355074, guid: fea3e8530dbbff64585368fcf94e7ecd, type: 3}
   noteGroupGap: 11
 --- !u!4 &1700364691

@@ -9,6 +9,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image scoreImg;
     [SerializeField] private TextMeshProUGUI scoreTmp;
 
+
+    [SerializeField] private Image timerImg;
+    [SerializeField] private TextMeshProUGUI timerTmp;
+
     private void Awake()
     {
         Instance = this;
@@ -18,6 +22,12 @@ public class UIManager : MonoBehaviour
     {
         scoreTmp.text = $"{currentScore}/{maxScore}";
         scoreImg.fillAmount = (float)currentScore / maxScore;
+    }
+
+    public void OnTimerChange(float currentTimer, float maxTimer)
+    {
+        timerTmp.text = $"{currentTimer:N1}/{maxTimer:N1}";
+        timerImg.fillAmount = (float)currentTimer / maxTimer;
     }
 
 }

@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
-    [SerializeField] private KeyCode[] initKeyCodeArr;
+    
     [SerializeField] private GameObject noteGrouprefab;
     [SerializeField] private float noteGroupGap = 1f;
+    [SerializeField]
+    private KeyCode[] wholekeyCodesarr = new KeyCode[]
+    {
+        KeyCode.A,KeyCode.S,KeyCode.D,KeyCode.F,KeyCode.G,KeyCode.H
+        ,KeyCode.H,KeyCode.J,KeyCode.K,KeyCode.L, };
+    [SerializeField] private int initNoteGroupNum = 2;
     public static NoteManager Instance;
     private List<notegroup> notegroupList = new List<notegroup>();
     private void Awake()
@@ -17,10 +23,15 @@ public class NoteManager : MonoBehaviour
 
     public void Create()
     {
-        foreach(KeyCode keyCode in initKeyCodeArr)
+        for(int i = 0; i < initNoteGroupNum; i++)
         {
-            CreateNoteGroup(keyCode);
+            CreateNoteGroup(wholekeyCodesarr[i]);
         }
+    }
+
+    public void CreateNoteGroup()
+    {
+        CreateNoteGroup(wholekeyCodesarr[notegroupList.Count]);
     }
 
     private void CreateNoteGroup(KeyCode keyCode)
@@ -44,6 +55,7 @@ public class NoteManager : MonoBehaviour
             if (keyCode == notegroup.KeyCode)
             {
                 notegroup.OnInput(isApple);
+                break;
             }
         }
     }

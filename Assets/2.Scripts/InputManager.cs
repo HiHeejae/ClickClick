@@ -19,6 +19,10 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.isGameDone)
+        {
+            return;
+        }
         foreach (KeyCode keyCode in keyCodeList)
         {
             if (Input.GetKeyDown(keyCode))

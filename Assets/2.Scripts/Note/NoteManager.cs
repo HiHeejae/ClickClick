@@ -12,7 +12,7 @@ public class NoteManager : MonoBehaviour
     private KeyCode[] wholekeyCodesarr = new KeyCode[]
     {
         KeyCode.A,KeyCode.S,KeyCode.D,KeyCode.F,KeyCode.G,KeyCode.H
-        ,KeyCode.H,KeyCode.J,KeyCode.K,KeyCode.L, };
+        ,KeyCode.J,KeyCode.K,KeyCode.L };
     [SerializeField] private int initNoteGroupNum = 2;
     public static NoteManager Instance;
     private List<notegroup> notegroupList = new List<notegroup>();

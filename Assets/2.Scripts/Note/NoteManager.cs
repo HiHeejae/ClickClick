@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
-    
     [SerializeField] private GameObject noteGrouprefab;
     [SerializeField] private float noteGroupGap = 1f;
     [SerializeField]
     private KeyCode[] wholekeyCodesarr = new KeyCode[]
     {
-        KeyCode.A,KeyCode.S,KeyCode.D,KeyCode.F,KeyCode.G,KeyCode.H
-        ,KeyCode.J,KeyCode.K,KeyCode.L };
+        KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.F, KeyCode.G, KeyCode.H, KeyCode.J, KeyCode.K, KeyCode.L
+    };
     [SerializeField] private int initNoteGroupNum = 2;
+
     public static NoteManager Instance;
     private List<notegroup> notegroupList = new List<notegroup>();
+
     private void Awake()
     {
         Instance = this;
@@ -23,7 +23,7 @@ public class NoteManager : MonoBehaviour
 
     public void Create()
     {
-        for(int i = 0; i < initNoteGroupNum; i++)
+        for (int i = 0; i < Mathf.Min(initNoteGroupNum, wholekeyCodesarr.Length); i++)
         {
             CreateNoteGroup(wholekeyCodesarr[i]);
         }
@@ -31,7 +31,10 @@ public class NoteManager : MonoBehaviour
 
     public void CreateNoteGroup()
     {
-        CreateNoteGroup(wholekeyCodesarr[notegroupList.Count]);
+        if (notegroupList.Count < wholekeyCodesarr.Length)
+        {
+            CreateNoteGroup(wholekeyCodesarr[notegroupList.Count]);
+        }
     }
 
     private void CreateNoteGroup(KeyCode keyCode)
@@ -47,7 +50,7 @@ public class NoteManager : MonoBehaviour
 
     public void OnInput(KeyCode keyCode)
     {
-        int randld = Random.Range(0, notegroupList.Count);
+        int randld = Random.Range(0, 2);
         bool isApple = randld == 0 ? true : false;
 
         foreach (notegroup notegroup in notegroupList)
@@ -59,5 +62,4 @@ public class NoteManager : MonoBehaviour
             }
         }
     }
-
 }

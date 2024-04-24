@@ -25,7 +25,7 @@ public class InputManager : MonoBehaviour
         }
         foreach (KeyCode keyCode in keyCodeList)
         {
-            if (Input.GetKeyDown(keyCode))
+            if (Input.GetKeyDown(keyCode) == true)
             {
                 NoteManager.Instance.OnInput(keyCode);
                 break;

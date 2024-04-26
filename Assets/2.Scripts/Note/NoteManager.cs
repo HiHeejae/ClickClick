@@ -50,8 +50,8 @@ public class NoteManager : MonoBehaviour
 
     public void OnInput(KeyCode keyCode)
     {
-        int randld = Random.Range(0, 2);
-        bool isApple = randld == 0 ? true : false;
+        int randId = Random.Range(0, 10);
+        bool isApple = randId < 6 ? true : false; // 6/10의 확률로 사과, 4/10의 확률로 블루베리
 
         foreach (notegroup notegroup in notegroupList)
         {

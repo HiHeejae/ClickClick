@@ -14,10 +14,9 @@ public class CouroutineTest : MonoBehaviour
         int counter = 0;
         while (true)
         {
-            Debug.Log(counter);
+            // Debug.Log(counter); // 이 부분을 주석 처리하거나 제거합니다.
             counter++;
             yield return new WaitForSeconds(1);
         }
     }
-
 }

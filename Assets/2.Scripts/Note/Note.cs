@@ -13,6 +13,14 @@ public class Note : MonoBehaviour
     private bool isApple;
     public void Destroy()
     {
+        if (isApple)
+        {
+            SoundManager.instance.Sound(0);
+        }
+        if (!isApple)
+        {
+            SoundManager.instance.Sound(1);
+        }
         GameObject.Destroy(gameObject);
     }
 

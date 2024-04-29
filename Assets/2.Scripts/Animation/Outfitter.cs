@@ -21,15 +21,6 @@ public class Outfitter : MonoBehaviour
         resolvers = GetComponentsInChildren<SpriteResolver>().ToList();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            charType = charType == CharacterType.Ork ? CharacterType.Bandit : CharacterType.Ork;
-            ChangeOutfit();
-        }
-
-    }
 
     private void ChangeOutfit()
     {

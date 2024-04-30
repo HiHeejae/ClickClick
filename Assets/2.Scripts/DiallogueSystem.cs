@@ -26,14 +26,14 @@ public class DiallogueSystem : MonoBehaviour
 
         Next();
     }
-    
     public void Next()
     {
-        if (sentences.Count == 0 && isDiallogue) 
+        if (sentences.Count == 0)
         {
             End();
             return;
         }
+
         des.text = sentences.Dequeue();
     }
 

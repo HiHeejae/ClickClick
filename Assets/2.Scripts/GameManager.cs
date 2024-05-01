@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
@@ -21,9 +22,9 @@ public class GameManager : MonoBehaviour
     private bool isgameClear;
     private bool isgameOver;
 
-    private int score;
     private int nextNoteGroupUnlockCnt;
     [SerializeField] private float maxtime = 30f;
+
 
     public bool isGameDone
     {
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         if (isApple)
         {
-            score++;
+            Scoremanager.score++;
             nextNoteGroupUnlockCnt++;
 
             if (noteGroupCreateScore <= nextNoteGroupUnlockCnt)
@@ -49,16 +50,16 @@ public class GameManager : MonoBehaviour
                 NoteManager.Instance.CreateNoteGroup();
             }
 
-            if (maxScore <= score)
+            if (maxScore <= Scoremanager.score)
             {
                 SceneManager.LoadScene("gameclear");
             }
         }
         else
         {
-            score--;
+            Scoremanager.score--;
         }
-        UIManager.Instance.OnScoreChange(score, maxScore);
+        UIManager.Instance.OnScoreChange(Scoremanager.score, maxScore);
 
 
     }
@@ -70,8 +71,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        UIManager.Instance.OnScoreChange(this.score, maxScore);
+        UIManager.Instance.OnScoreChange(Scoremanager.score, maxScore);
         NoteManager.Instance.Create();
+        
 
         StartCoroutine(TimerCouroutine());
     }
@@ -90,17 +92,24 @@ public class GameManager : MonoBehaviour
                 yield break;
             }
         }
-        
+        Debug.Log($"score : {Scoremanager.score}, bestScore  : {Scoremanager.bestscore}");
+        if (Scoremanager.score > Scoremanager.bestscore)
+        {
+            Scoremanager.bestscore = Scoremanager.score;
+            Debug.Log("bestscore change "+ Scoremanager.bestscore);
+        }
         SceneManager.LoadScene("gameover") ;
 
 
     }
-    public void Restart()
-    {
-        Debug.Log("Game Restart!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // 현재 씬 다시 로드하도록 수정
-    }
+    //public void Restart()
+    //{
+    //    Scoremanager.score = 0;
+    //    Debug.Log("Game Restart!");
+    //    SceneManager.LoadScene("Main");
+    //}
 }
+
 
 public class Example : MonoBehaviour
 {
@@ -109,5 +118,6 @@ public class Example : MonoBehaviour
         // 디버그 로그를 출력할 때만 콘솔에 표시되도록 함
         Debug.Log("This is a debug message.");
     }
+
 }
 

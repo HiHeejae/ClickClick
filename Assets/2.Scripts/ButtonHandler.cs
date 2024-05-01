@@ -12,7 +12,9 @@ public class ButtonHandler : MonoBehaviour
     public void OnStartButtonClicked()
     {
         // Main æ¿¿∏∑Œ ¿Ãµø
+        Scoremanager.score = 0;
         SceneManager.LoadScene("Main");
+        //GameManager.Instance.Restart();
     }
 }
 

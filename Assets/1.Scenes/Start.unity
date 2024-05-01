@@ -790,7 +790,7 @@ MonoBehaviour:
     - "\uBE14\uB8E8               \uB9DD\uACE0"
     - " \uBE14\uB8E8\uB97C \uC0C1\uD638\uC791\uC6A9\uD560 \uC2DC 1\uC810 \uB9DD\uACE0\uB97C
       \uC0C1\uD638\uC791\uC6A9\uD560 \uC2DC -1\uC810"
-    - "30\uCD08\uC548\uC5D0 100\uC810\uC744 \uB3C4\uB2EC\uD574 \uBE14\uB8E8\uC640
+    - "20\uCD08\uC548\uC5D0 40\uC810\uC744 \uB3C4\uB2EC\uD574 \uBE14\uB8E8\uC640
       \uB9DD\uACE0\uB97C \uB530\uB73B\uD55C \uACF3\uC5D0\uC11C \uC798 \uC218 \uC788\uAC8C
       \uB3C4\uC640\uC8FC\uC138\uC694!"
     - "\uB9CC\uC57D \uC2E4\uD328\uD558\uAC8C \uB41C\uB2E4\uBA74 \uBE14\uB8E8\uC640
@@ -824,7 +824,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b4fbbc8f0e8f4644e845c3844ed31b18, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.005
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

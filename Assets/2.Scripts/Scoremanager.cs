@@ -12,13 +12,7 @@ public class Scoremanager : MonoBehaviour
 
     public void Update()
     {
-
-        Debug.Log("ScoreManager start1 ");
         scoreTmp.text = $"Score : {score}";
-        bestscoreTmp.text = $"Best Score : {bestscore}";
-
     }
-
-
 
 }

@@ -46,8 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2774271440135698845}
-  appleSprite: {fileID: 21300000, guid: 06a94729c6e9cfc47be05fd0202069c7, type: 3}
-  BlueBarrysprite: {fileID: 21300000, guid: 536556f526c4c704587e7d8a5bda1159, type: 3}
+  appleSprite: {fileID: 21300000, guid: 7bbe88dfb9bd82b44937426450d87c8a, type: 3}
+  BlueBarrysprite: {fileID: 21300000, guid: b29378703fa882140a6b637ae64cd498, type: 3}
+  eyeOpenMango: {fileID: 21300000, guid: 3737d3e4465304942815636e964ec5e2, type: 3}
+  eyeDownMango: {fileID: 21300000, guid: ea587c1a71c42b443a24d80b7df4a13f, type: 3}
+  eyeMango: {fileID: 0}
 --- !u!1 &6451309595898240405
 GameObject:
   m_ObjectHideFlags: 0

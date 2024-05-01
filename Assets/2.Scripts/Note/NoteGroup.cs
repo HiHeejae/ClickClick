@@ -19,6 +19,8 @@ public class notegroup : MonoBehaviour
     [SerializeField] private Sprite SelectBtnSprite;
     [SerializeField] private TextMeshPro keyCodeTmp;
     [SerializeField] private Animation anim;
+    public Animation createBlue;
+
     private KeyCode Keycode;
     public KeyCode KeyCode
     {
@@ -54,6 +56,7 @@ public class notegroup : MonoBehaviour
         note.SetSprite(isApple);
 
         noteList.Add(note);
+        createBlue.Play("Blue");
     }
 
     public void OnInput(bool isApple)

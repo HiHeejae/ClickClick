@@ -1,21 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.Sockets;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DiallogueSystem : MonoBehaviour
 {
     public Text des;
-    bool isDiallogue = false;
+    private bool isDiallogue = false;
     public GameObject diallogueimage;
     public Button diallogueBtn;
     public GameObject birdimage;
-    
 
-    Queue<string> sentences = new Queue<string>();
+    private Queue<string> sentences = new Queue<string>();
+
     public void Begin(Diallogue info)
     {
         sentences.Clear();
@@ -26,6 +24,7 @@ public class DiallogueSystem : MonoBehaviour
 
         Next();
     }
+
     public void Next()
     {
         if (sentences.Count == 0)
@@ -45,12 +44,11 @@ public class DiallogueSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (isDiallogue && Input.GetKeyDown(KeyCode.Mouse0))
         {
             Next();
             birdimage.SetActive(false);
         }
-
     }
 
     public void ClickDiallogue()

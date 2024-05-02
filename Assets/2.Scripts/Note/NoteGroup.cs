@@ -43,8 +43,6 @@ public class notegroup : MonoBehaviour
         }
 
         InputManager.Instance.addkeycode(keyCode);
-
-
     }
 
     private void CreateNote(bool isApple)
@@ -56,6 +54,13 @@ public class notegroup : MonoBehaviour
         note.SetSprite(isApple);
 
         noteList.Add(note);
+
+        // 블루베리인 경우에만 추가적인 이미지 설정
+        if (!isApple)
+        {
+            note.SetSprite(false);
+        }
+
         createBlue.Play("Blue");
     }
 
@@ -85,5 +90,5 @@ public class notegroup : MonoBehaviour
     {
         btnSpriteRender.sprite = normalBtnSprite;
     }
-    
+
 }

@@ -9,7 +9,7 @@ public class Note : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite appleSprite;
     [SerializeField] private Sprite BlueBarrysprite;
-   // [SerializeField] private Sprite eyeOpenMango;
+    // [SerializeField] private Sprite eyeOpenMango;
     //[SerializeField] private Sprite eyeDownMango;
     //[SerializeField] private SpriteRenderer eyeMango;
 
@@ -33,10 +33,10 @@ public class Note : MonoBehaviour
             //eyeMango.sprite = eyeOpenMango;
         }
         GameObject.Destroy(gameObject);
-        
+
     }
 
-    
+
     public void DeleteNote()
     {
         GameManager.Instance.CalculateScore(isApple);
@@ -48,5 +48,5 @@ public class Note : MonoBehaviour
         spriteRenderer.sprite = isApple ? appleSprite : BlueBarrysprite;
     }
 
-   
+
 }
